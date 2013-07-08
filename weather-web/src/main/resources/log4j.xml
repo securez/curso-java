@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd" >
+<log4j:configuration>
+
+    <!-- APPENDERS LIST -->
+    <!-- show log entries on console -->
+    <appender name="consoleAppender" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d [%t] %-5p %C{6} (%F:%L) - %m%n" />
+        </layout>
+    </appender>
+
+    <!-- LOGGER LIST -->
+    <!-- log all classes in org.developers package -->
+    <logger name="org.esquivo">
+        <level value="DEBUG" />
+    </logger>
+
+    <logger name="org.apache">
+        <level value="INFO" />
+    </logger>
+    
+    <logger name="org.jboss">
+        <level value="INFO" />
+    </logger>
+    
+    <logger name="org">
+        <level value="INFO" />
+    </logger>
+    
+    <logger name="net">
+        <level value="INFO" />
+    </logger>
+    
+    <logger name="org.eclipse.jetty">
+        <level value="INFO" />
+    </logger>
+ 
+    <root>
+        <priority value="debug" />
+
+        <!-- log all log entries on console -->
+        <appender-ref ref="consoleAppender" />
+    </root>
+
+</log4j:configuration>

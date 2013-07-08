@@ -1,0 +1,12 @@
+/.settings/
+/target/
+/.classpath
+/.project
+/downloader-cli/.settings/
+/downloader-cli/target/
+/downloader-cli/.classpath
+/downloader-cli/.project
+/downloader-lib/.settings/
+/downloader-lib/target/
+/downloader-lib/.classpath
+/downloader-lib/.project

@@ -1,0 +1,64 @@
+# TODO
+
+* Cambiar las implementaciones para que usen streams con buffer, usando algun tamaño de buffer potencia de 2, aconsejable  4096, 8192.
+
+* Una vez que tengamos el programa, crear un entregable .jar con el programa binario, dicho programa debe poderse ejecutar desde la linea de comando con java -jar <prog>.jar
+  NOTA: Como la implemetación HttpClient requiere de librerias externas para que nuestro programa funcione, con que funcione el URLDownloader es suficiente.
+  
+* Crear un Ant para la construcción del proyecto y la creación del entregable binario (downloader.jar).
+
+* Añadir a Ant la creación de un entregable independiente con el código fuente del programa (downloader-sources.jar).
+
+* Añadir a Ant la creación de un entregable independiente con el javadoc del programa (downloader-javadoc.jar).
+
+* Integrar las pruebas unitarias en Ant (test), aqui tendras que incluir el jar de Junit en lib, y usar la tarea Ant para ejecutar las pruebas.
+  NOTA: Es aconsejable tener en Ant un classpath para compilar el codigo y otro para ejecutar las pruebas, esto ya te lo explicare, sino anotalo en dudas mas abajo, :)
+  
+* Añadir a Ant la creación de un zip (dist), con el fichero README.txt, LICENSE.txt y los entregables binarios jar, sources y javadoc.
+
+* Pasar los mensajes de la lib a slf4j.
+
+* Leer bloques y no caracter a caracter
+
+* Añadir checkstyle a Ant.
+
+* Añadir PMD a Ant.
+
+* Probar algun sistema como getopt para Main (Opciones simples un caracter (-a), largas (--algo) y simple incluir una -h (--help opcional) que llame a usage()
+
+* Añadir opciones de tiempo de espera para las peticiones (connection timeout y read timeout).
+
+* Use executor to run downloader in some threads
+
++ Meter javadoc en el codigo de la libreria
+
+? Meter en el jar solo los resources que necesita el programa (libreria), quitar los xmls de pruebas y logeo. 
+
+
+- Añadir callback para conocer el progreso de las descargas
+Debe incluir
+-- Bytes leidos
+** Velocidad de descarga 
+-- Tamaño de las descargas (consultar httpheaders, Content-Length)
+-- Progreso
+
+- Obtener
+
+
+
+- Ant JUnit Reports falla al compilar el xslt en java 1.6 (investigar)
+
+- Hacer un analisis de requisitos para la nueva version de la aplicación.
+
+- Convertir el proyecto a Maven.
+
+- Como maven ya dispone de plugins para crear javadoc y sources, usarlos para que se generen los entregables.
+
+- Separar el proyecto en dos uno tendra las interfaces de usuario (Main) y otro la libreria downloader.
+
+- Usando el plugin de Assemble crear un ZIP con la distribución (README, TODO, etc.)
+
+
+# DUDAS
+
+-

@@ -1,0 +1,36 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.roisu</groupId>
+        <artifactId>curso-java-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../parent/pom.xml</relativePath>
+    </parent>
+
+    <artifactId>weather-parser-meteogalicia</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Meteo Galicia Parser</name>
+    <description>Meteo Galicia Weather Parser</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.roisu</groupId>
+            <artifactId>weather-entities</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>org.roisu</groupId>
+            <artifactId>weather-parser-api</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>net.sourceforge.htmlcleaner</groupId>
+            <artifactId>htmlcleaner</artifactId>
+            <version>${htmlcleaner.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

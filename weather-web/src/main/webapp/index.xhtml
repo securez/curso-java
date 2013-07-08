@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+	<title>Hello!</title>
+	<h:outputStylesheet library="css" name="main.css"  />
+</h:head>
+<h:body>
+	<h3>Select your location</h3>
+	<h:form title="Prueba">
+		<fieldset>
+			<legend> </legend>
+			<h:panelGrid columns="2" columnClasses="label,value"
+				styleClass="grid">
+				<h:outputLabel value="Location" />
+				<h:selectOneMenu id="selectOneCb" value="#{locationBean.selected}">
+					<f:selectItem itemLabel="Select Location" itemValue="" />
+					<f:selectItems value="#{locationBean.locations}" var="loc"
+						itemLabel="#{loc.town}" itemValue="#{loc.id}" />
+				</h:selectOneMenu>
+				<f:facet name="footer">
+					<h:panelGroup style="display:block; text-align:center">
+						<h:commandButton id="submit" value="Go!!" />
+					</h:panelGroup>
+				</f:facet>
+			</h:panelGrid>
+		</fieldset>
+	</h:form>
+	<br />
+	<h:dataTable value="#{locationBean.weatherData}" var="o"
+		styleClass="table" headerClass="table-header"
+		rowClasses="table-odd-row,table-even-row">
+
+		<h:column>
+			<!-- column header -->
+			<f:facet name="header">Date</f:facet>
+			<!-- row record -->
+    				#{o.startTime}
+    			</h:column>
+
+		<h:column>
+			<f:facet name="header">Min Temp</f:facet>
+    				#{o.minTemp}
+    			</h:column>
+
+		<h:column>
+			<f:facet name="header">Max Temp</f:facet>
+    				#{o.maxTemp}
+    			</h:column>
+
+	</h:dataTable>
+</h:body>
+</html>
