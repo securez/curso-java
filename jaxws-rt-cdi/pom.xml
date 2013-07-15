@@ -1,0 +1,40 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+		
+	<parent>
+		<groupId>org.roisu</groupId>
+		<artifactId>curso-java-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../parent/pom.xml</relativePath>
+	</parent>
+	
+	<artifactId>jaxws-rt-cdi</artifactId>
+	<packaging>jar</packaging>
+
+	<name>JAX-WS RI CDI</name>
+	<description>Simple JAX-WS RI integration with CDI</description>
+	
+	<dependencies>
+		<!-- CDI -->
+		<dependency>
+			<groupId>javax.enterprise</groupId>
+			<artifactId>cdi-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+        
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        
+        <!-- JAX-WS -->
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>${jaxws-rt.version}</version>
+            <scope>provided</scope>
+        </dependency>  
+	</dependencies>
+
+</project>
