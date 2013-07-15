@@ -29,7 +29,7 @@
 		<commons-beanutils.version>1.8.3</commons-beanutils.version>
 		<commons-io.version>2.4</commons-io.version>
         <commons-lang.version>2.6</commons-lang.version>
-		<weld.version>1.1.10.Final</weld.version>
+		<weld.version>1.1.13.Final</weld.version>
 		<jaxws-rt.version>2.2.5</jaxws-rt.version>
 		<deltaspike.version>0.5-SNAPSHOT</deltaspike.version>
 		<resteasy.version>3.0.1.Final</resteasy.version>
