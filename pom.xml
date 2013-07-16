@@ -11,6 +11,7 @@
 		<module>parent</module>
 		<module>test-utils</module>
         <module>cdi-common</module>
+        <module>jaxws-rt-cdi</module>
 		<module>quartz-cdi</module>
 		<module>downloader</module>
         <module>weather-entities</module>
