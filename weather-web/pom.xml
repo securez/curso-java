@@ -65,8 +65,7 @@
             <artifactId>quartz-cdi</artifactId>
             <version>${quartz-cdi.version}</version>
         </dependency>
-        
-        
+
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
@@ -106,6 +105,11 @@
         <dependency>
             <groupId>org.apache.deltaspike.modules</groupId>
             <artifactId>deltaspike-jpa-module-impl</artifactId>
+            <version>${deltaspike.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.deltaspike.modules</groupId>
+            <artifactId>deltaspike-data-module-impl</artifactId>
             <version>${deltaspike.version}</version>
         </dependency>
 
