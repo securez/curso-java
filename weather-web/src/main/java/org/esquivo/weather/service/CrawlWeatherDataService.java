@@ -11,6 +11,7 @@ import java.util.Map;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 
+import org.apache.deltaspike.core.api.config.ConfigProperty;
 import org.esquivo.downloader.Downloader;
 import org.esquivo.weather.entities.Forecast;
 import org.esquivo.weather.entities.Location;
@@ -26,7 +27,9 @@ import org.slf4j.LoggerFactory;
 public class CrawlWeatherDataService {
     private static final Logger LOG = LoggerFactory.getLogger(CrawlWeatherDataService.class);
 
-    private String url = "http://www.meteogalicia.es/web/index.action";
+    @Inject
+    @ConfigProperty(name = "meteogalicia.url")
+    private String url;
     
     @Inject
     private WeatherDao service;
