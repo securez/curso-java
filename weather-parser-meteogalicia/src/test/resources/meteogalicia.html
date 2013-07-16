@@ -1,0 +1,1467 @@
+<!DOCTYPE html PUBLIC 
+	"-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="gl" lang="gl">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8"/>
+	
+	<title>MeteoGalicia</title>
+	<meta name="Keywords" content="tempo, tiempo, meteorología, meteoroloxía, predicción,predición, observación" />
+	<meta name="Description" content="MeteoGalicia, predicións e observacións meteorolóxicas para a Comunidade Autónoma Galega" />
+	
+	<link href="/web/styles/main/main_v1_min.css" rel="stylesheet" type="text/css" media="all" />
+	
+	<script type="text/javascript" src="http://www.meteogalicia.es/datosred/infoweb/meteo/libExternas/Dojo/1.7.3/dojo/dojo.js" djConfig="parseOnLoad: true, isDebug: false, baseUrl: '/datosred/infoweb/meteo/libExternas/Dojo/1.7.3/dojo/', extraLocale: ['gl', 'es']"></script>
+		
+	<script type="text/javascript" src="/web/scripts/main/main_v1_min.js"></script>
+	
+	<link rel="Shortcut Icon"  type="image/x-icon" href="/web/images/cousas/favIcon/favicon.ico"/>
+	
+	<script type="text/javascript">		
+		var locale = "gl";
+		
+		/*dojo.addOnLoad( function(){
+	    	actualizaPredicion();
+		});*/
+		
+		
+	</script>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+	<meta http-equiv="Cache-Control" content="no-cache" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="-1" />
+	
+	<link href="/web/styles/principal/index_v1_min.css" rel="stylesheet" type="text/css" media="all" />	
+	<link href="/web/styles/cousas/temperaturas_min.css" rel="stylesheet" type="text/css" media="all" />
+	
+		
+	<script type="text/javascript" src="scripts/principal/principal_v1.js"></script>
+	
+	<script type="text/javascript"> 
+		dojo.addOnLoad( function(){
+			init();
+			var hora='18';
+			document.getElementById("boton0").className="boton bot_activo";
+	    	document.getElementById("boton1").className="boton bot_inactivo";	
+	    	actualizaSenMenu();
+	    	
+		});
+		
+		
+	</script> 
+	
+	
+<meta http-equiv="Cache-Control" content="no-cache" /><meta http-equiv="Pragma" content="no-cache" /><meta http-equiv="Expires" content="-1" />
+</head>
+
+
+<body id="page-home">
+<noscript>
+	<p>Benvido a MeteoGalicia</p>
+	<p>A p&aacute;xina que est&aacute; vendo require para o seu funcionamento o uso de JavaScript.	Se o ten deshabilitado de forma intencionada, por favor volva a activalo.</p>
+		
+	
+</noscript>
+	<div id="contedor">
+		<div id="cabeceira" class="clearfix">
+			
+			<div id="aux-nav" class="clearfix">
+	
+				<ul id="utilidades" class="iconos">
+					<li>
+						<a href="http://www.meteogalicia.es/web/index.action?request_locale=gl">
+							Inicio
+						</a>
+					</li>
+					
+					<li  class="separa">
+						<a href="/web/informacion/mapaWeb.action">
+							Mapa web
+						</a>
+					</li>
+					
+					<li  class="separa">
+						<a href="http://www.meteogalicia.es/suxestions/iso/isoIndex.action?request_locale=gl">
+							Suxesti&oacute;ns
+						</a>
+					</li>
+					
+					<li  class="separa">
+						<a href="/web/informacion/usuario/usuarioIndex.action">
+							Atenci&oacute;n &oacute; usuario
+						</a>
+					</li>
+					
+					<li  class="separa">
+						<a href="/web/informacion/contactoIndex.action">
+							Contactar
+						</a>
+					</li>
+					
+				</ul>
+				
+				<ul id="idiomas" class="nav-horizontal">
+					
+					
+						 
+					 
+						<li class="primeiro">Galego</li>					
+						<li class="ultimo">
+						
+	            			
+	        			
+	        			<a href="/web/index.action?request_locale=es">Castellano</a>   
+						</li>
+					
+					
+					
+			
+			</ul>
+				
+				<div class="clear"></div>
+			</div>
+			 
+			<div id="contcabeceira" class="clearfix">
+				
+				<div id="logossub">
+					<a href="http://www.meteogalicia.es"><div id="logo_mg">&nbsp;</div></a>
+				</div>
+				
+				
+				
+				<a href="http://www.cmati.xunta.es" target="_blank"><div id="logosmain"></div></a>
+				
+			</div>
+			
+			
+		</div>
+		<!-- 
+		<div id="menu">
+					<a href="#" onclick="javascript:actualizaSubMenu('Predicion');"><div id="itemPredicion" class="item"><span>Predici&oacute;n</span></div></a>
+					<a href="#" onclick="javascript:actualizaSubMenu('Observacion');"><div id="itemObservacion" class="item"><span>Observaci&oacute;n</span></div></a>
+					<a href="#" onclick="javascript:actualizaSubMenu('Modelos');" ><div id="itemModelos" class="item"><span >Modelos num&eacute;ricos</span></div></a>
+					<a href="#" onclick="javascript:actualizaSubMenu('CAire');"><div id="itemCAire" class="item"><span>Calidade aire</span></div></a>
+					<a href="#" onclick="javascript:actualizaSubMenu('Publicacions');"><div id="itemPublicacions" class="item"><span>Publicaci&oacute;ns</span></div></a>
+					<a href="#anclaMenu"><div class="item ultimo"><span>M&aacute;is</span></div></a>
+		</div>
+		 -->
+		<div id="menu">
+		
+		<a href="/web/predicion/index.action">
+					<div id="itemPredicion" class="item"><span>Predici&oacute;n</span></div>
+			</a>
+					<!-- 
+					<a href="#" onclick="javascript:actualizaSubMenu('Observacion');"><div id="itemObservacion" class="item"><span>Observaci&oacute;n</span></div></a>
+					<a href="#" onclick="javascript:actualizaSubMenu('Modelos');" ><div id="itemModelos" class="item"><span >Modelos num&eacute;ricos</span></div></a>
+					<a href="#" onclick="javascript:actualizaSubMenu('CAire');"><div id="itemCAire" class="item"><span>Calidade aire</span></div></a>
+					 -->
+					
+					<a href="http://www.meteogalicia.es/observacion/index.action?request_locale=gl"><div id="itemObservacion" class="item"><span>Observaci&oacute;n</span></div></a>
+					<a href="http://www.meteogalicia.es/modelos/index.action?request_locale=gl"><div id="itemModelos" class="item"><span >Modelos num&eacute;ricos</span></div></a>
+					<a href="http://www.meteogalicia.es/Caire/index.action?request_locale=gl"><div id="itemCAire" class="item"><span>Calidade aire</span></div></a>
+					
+					<a href="/web/informacion/publicacions/publicacionsIndex.action"><div id="itemPublicacions" class="item"><span>Publicaci&oacute;ns</span></div></a>
+					<a href="#anclaMenu"><div class="item ultimo"><span>M&aacute;is</span></div></a>
+		</div>
+		
+		<div id="subCabInterna">
+		<noscript>
+				
+	<div  class="menuNoScript">
+	
+		<ul class="nav-horizontal">
+			<li><span class="textoGris mayuscula">Predici&oacute;n:</span></li>
+			<li><a href="/web/predicion/cprazo/cprazoIndex.action">				 
+					<span>Galicia</span>
+			</a></li>
+			<li><a href="/web/predicion/localidades/localidadesIndex.action">
+					<span>Concellos</span>
+			</a></li>
+			
+			<li><a href="http://www2.meteogalicia.es/galego/prediccion/maritima/maritima.asp">
+					<span>Mar&iacute;tima</span>
+			</a></li>
+					
+			<li>
+				<a href="/web/tablasMaritimas/index.action">
+					<span>Portos e confrar&iacute;as</span>
+				</a>
+			</li>	
+			<li>
+				<a href="/web/predicion/maritima/mareasIndex.action">
+					<span>Mareas e l&uacute;as</span>
+				</a>
+			</li>
+			<li>
+				
+			<a href="/web/predicion/xacobeo/xacobeoIndex.action"><span>Cami&ntilde;os </span></a></li>
+     
+     		<li>
+				<a href="/web/predicion/cortes/cortesIndex.action"><span>Cortes voz</span></a>
+     		</li>
+     		
+     		<li>
+				<a href="/web/adversos/adversosIndex.action"><span>Adversos</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/predicion/orto/ortoIndex.action"><span>Orto e ocaso</span></a>
+			</li>
+			
+			<li>
+				<a href="http://www.meteogalicia.es/uv/observacionIndex.action?request_locale=gl">
+					<span>Ultravioleta</span></a>
+			</li>	
+			
+			
+			<li>
+				<a href="/web/predicion/praias/praiasIndex.action"><span>Praias</span></a>
+			</li>
+			
+			
+			
+			
+		</ul>	
+	</div>
+	<br clear="all"/>
+	<div  class="menuNoScript">
+		<ul class="nav-horizontal">
+			<li><span class="textoGris mayuscula">Observaci&oacute;n:</span></li>
+			<li><a href="http://www2.meteogalicia.es/galego/observacion/estacions/estacions.asp">
+					<span>Rede meteorol&oacute;xica</span>
+			</a></li>
+			<li><a href="http://www2.meteogalicia.es/galego/observacion/plataformas/plataformas.asp">
+					<span>Rede oceanogr&aacute;fica</span>
+			</a></li>
+			<li><a href="http://www.meteogalicia.es/agroMeteo/index.action" target='_blank'>
+					<span>Agrometeorolox&iacute;a</span>
+				</a>				
+			</li>
+			
+			<li><a href="http://www2.meteogalicia.es/galego/observacion/bloom/plataformas.asp">
+			<span>Encoros</span>
+			</a></li>
+			
+			 <li><a href="http://www.meteogalicia.es/observacion/satelite/sateliteIndex.action?request_locale=gl">
+					<span>Sat&eacute;lite</span>
+			</a></li>
+			
+			<li><a href="http://www.meteogalicia.es/observacion/radiosondaxe/radioIndex.action?request_locale=gl">
+					<span>RadioSondaxe</span>
+			</a></li>
+	
+			<li><a href="http://www2.meteogalicia.es/NovoXeollador/xeohoxeN.asp" target="_blank">
+			<span>Xeollador</span>
+			</a></li>
+			
+			<li><a href="http://www.meteogalicia.es/observacion/raios/raios.action?request_locale=gl">
+					<span>Raios</span>
+			</a></li>
+		
+			<li><a href="http://www.meteogalicia.es/observacion/radar/radar.action?request_locale=gl">
+					<span>Radar</span>
+			</a></li>			
+		</ul>
+	</div>
+	
+	
+	<div  class="menuNoScript">
+		<ul class="nav-horizontal">
+			<li><span class="textoGris mayuscula">Publicaci&oacute;ns:</span></li>
+			<li class="primero">
+				<a href="http://www.meteogalicia.es/observacion/informesclima/informesIndex.action?request_locale=gl">
+				<span>Anuarios e informes</span>
+				</a>
+			</li>
+			<li>
+				<a href="/web/informacion/publicacions/singulares.action"><span>An&aacute;lise</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/informacion/publicacions/artigos.action"><span>Artigos cient&iacute;ficos</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/informacion/publicacions/libros.action"><span>Libros</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/informacion/publicacions/proxectos.action"><span>Proxectos investigaci&oacute;n</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/informacion/publicacions/redes.action"><span>Redes investigaci&oacute;n</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/informacion/publicacions/proceedings.action"><span>Conferencias</span></a>
+			</li>
+			
+			<li>
+				<a href="http://www.meteogalicia.es/observacion/atlasrs/atlasrsIndex.action?request_locale=gl">
+					Atlas de radiaci&oacute;n solar
+				</a>
+			</li>		
+			
+    	</ul>
+	</div>
+	
+	<div  class="menuNoScript">
+		<ul class="nav-horizontal">
+			<li><span class="textoGris mayuscula">Modelos num&eacute;ricos:</span></li>
+			<li class="primero">
+				<a href="http://www.meteogalicia.es/modelos/index.action?request_locale=gl">				
+					<span>Imaxes dos modelos</span>
+				</a>
+			</li>
+			<li>
+				<a href="/web/modelos/threddsIndex.action"><span>Servidor THREDDS</span></a>
+			</li>
+			<li>
+				<a href="/web/proxectos/meteosix.action"><span>MeteoSIX</span></a>
+			</li>
+			
+    	</ul>
+	
+	</div>
+	
+	<div  class="menuNoScript">
+		<ul class="nav-horizontal">
+		<li><span class="textoGris mayuscula">Calidade aire:</span></li>
+					<li>
+                        <a href="http://www.meteogalicia.es/Caire/index.action?request_locale=gl">
+                        	<span>&Iacute;ndice Calidade do Aire</span>
+                        </a>
+                   </li>
+                   <li>
+                       <a href="http://www.meteogalicia.es/modelos/cargarNodo.action?grupo=gr5&modelo=chimere&saida=chimere_s1&tipoImaxe=chimere_t1&malla=chimere">
+							Predici&oacute;n
+						</a>
+                   </li>
+                   <li>
+                           <a href="http://www.meteogalicia.es/Caire/datos.action?request_locale=gl">
+                                   Consulta de datos
+                           </a>
+                   </li>
+                   <li>
+                           <a href="http://www.meteogalicia.es/Caire/informacionCaire.action?request_locale=gl">
+                                   Informaci&oacute;n
+                           </a>
+                   </li>
+                   <li>
+                           <a href="http://www.meteogalicia.es/Caire/informesCaire.action?request_locale=gl">
+                                   Informes
+                           </a>
+                   </li>
+                   <li>
+                           <a href="http://www.meteogalicia.es/Caire/estacionsCaire.action?request_locale=gl">
+                                   Descrici&oacute;n da Rede
+                           </a>
+                   </li>
+                   <li>
+                           <a href="http://WWW.meteogalicia.es/contAcustica/consultaIndex.action?request_locale=gl">
+                                   Contaminaci&oacute;n Ac&uacute;stica
+                           </a>
+                   </li>
+    	</ul>
+	</div>
+ 
+		</noscript>
+		</div>
+		<br clear="all"/>
+		
+		<div id="content" class="clearfix">
+			
+			<div id="corpo">
+	<div id="ContenedorPrincipal">
+		<div id="cprazo" class="contieneFloat" >
+			<div class="dojoDndHandlePlus"><!-- interior -->
+			
+				<div class="cabeceraPlus"><!-- titulo -->
+					
+						
+						
+					
+										
+					<a href="#" onclick="window.location.href='/web/RSS/rssCPrazo.action?dia=-1&amp;request_locale=gl'"><img  class="floatRight margenRSSFijo" src="/web/images/cousas/rss-icon.png" alt="rss"/></a>
+						
+ 					<span class="tituloCaja"> Predici&oacute;n xeral para Galicia:</span> 					
+ 				</div> 
+ 				</div>
+ 				<div>
+ 				<div class="ElementoXeralNodosPlus contenidoCP">
+ 				
+	 				<div id="botones" >
+						
+							<div class="boton bot_inactivo" id="boton0">
+								
+		    						
+								
+								
+								<a href="#" onclick="window.location.href='/web/predicion/cprazo/cprazoIndex.action?dia=0'">xoves</a>
+							</div>
+						
+							<div class="boton bot_inactivo" id="boton1">
+								
+		    						
+								
+								
+								<a href="#" onclick="window.location.href='/web/predicion/cprazo/cprazoIndex.action?dia=1'">venres</a>
+							</div>
+						
+							<div class="boton bot_inactivo" id="boton2">
+								
+		    						
+								
+								
+								<a href="#" onclick="window.location.href='/web/predicion/cprazo/cprazoIndex.action?dia=2'">sábado</a>
+							</div>
+						
+							<div class="boton bot_inactivo" id="boton3">
+								
+		    						
+								
+								
+								<a href="#" onclick="window.location.href='/web/predicion/cprazo/cprazoIndex.action?dia=3'">domingo</a>
+							</div>
+						
+	
+						<div class="boton bot_inactivo">
+							
+							<a href="/web/predicion/localidades/localidadesIndex.action#anclaMenu">Medio prazo</a>
+						</div>
+						
+						<div id="masEnlaces">
+							<div class="linkPDF">								
+								<span class="peMapaAcl toCapit">
+	 								&Uacute;ltima actualizaci&oacute;n: 11/07/2013 09:00
+	 							</span>		
+							</div>							
+						</div>				
+					</div>
+ 				 				
+					<div id="mapaXeral"> 
+						<div>
+							
+	    						
+							
+	    						
+							
+							
+							<!-- ligazón para o mapa -->
+							
+		    						
+							
+														
+	    						
+									
+								<a href="#" onclick="window.location.href='/web/predicion/cprazo/cprazoIndex.action?dia=0'"><img src="predicion/cprazo/getImaxeN.action;jsessionid=80DED053D7DA0C406D48AE2857C3F76D.EUME-01F" width="355" alt="Noite" title="Noite"/></a>
+							
+						</div> 
+						<div> 
+							<div class="izquierda15">
+								<a href="#" onclick="window.open('/web/predicion/localidades/lendaLoc.action','Lenda','menubar=no,width=850,height=795')">
+									<span class="ultimaFila enlaceAzul">
+										Lenda
+									</span>
+								</a>
+							</div>
+							<div class="derecha85">
+								<span class="peMapa">									 		 					 
+		 							
+		 							
+		 								Noite&nbsp;do
+		 							
+		 							xoves, 11 de xullo de 2013
+		 						</span>
+	 						</div>	 																	 			
+ 						</div>	
+					</div>
+					
+					<div id="temperaturasXeral" >
+						
+						<span class="tituloTemp textoGris">
+		  					   Temperaturas		    
+		  				</span>
+
+	  					<table class="temperatrasTabla">
+		  					
+		  					
+		  					<tbody>
+		  					
+		  					<tr>
+		  					     <td class="titulo3 textoGris fondoTemp">Concellos</td>
+		  					    <td colspan="2" class="titulo3 textoGris">MIN/MAX</td>
+		  					</tr>
+		  					
+							
+								<tr>
+									<td class="fondoTemp">
+										
+				    						
+										
+										<a href="#" onclick="window.location.href='/web/predicion/localidades/localidadesIndex.action?idZona=15030'">A Coru&ntilde;a</a>
+									</td>
+									<td class="t16 centrar">
+										<span class="centrar">
+											
+												&nbsp;16&deg;
+											
+											
+										</span>									
+									</td>
+									<td class="t27 centrar">
+										<span>
+											
+												&nbsp;27&deg;
+											
+											
+										</span>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="fondoTemp">
+										
+				    						
+										
+										<a href="#" onclick="window.location.href='/web/predicion/localidades/localidadesIndex.action?idZona=15036'">Ferrol</a>
+									</td>
+									<td class="t19 centrar">
+										<span class="centrar">
+											
+												&nbsp;19&deg;
+											
+											
+										</span>									
+									</td>
+									<td class="t28 centrar">
+										<span>
+											
+												&nbsp;28&deg;
+											
+											
+										</span>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="fondoTemp">
+										
+				    						
+										
+										<a href="#" onclick="window.location.href='/web/predicion/localidades/localidadesIndex.action?idZona=27028'">Lugo</a>
+									</td>
+									<td class="t17 centrar">
+										<span class="centrar">
+											
+												&nbsp;17&deg;
+											
+											
+										</span>									
+									</td>
+									<td class="t29 centrar">
+										<span>
+											
+												&nbsp;29&deg;
+											
+											
+										</span>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="fondoTemp">
+										
+				    						
+										
+										<a href="#" onclick="window.location.href='/web/predicion/localidades/localidadesIndex.action?idZona=32054'">Ourense</a>
+									</td>
+									<td class="t19 centrar">
+										<span class="centrar">
+											
+												&nbsp;19&deg;
+											
+											
+										</span>									
+									</td>
+									<td class="t37 centrar">
+										<span>
+											
+												&nbsp;37&deg;
+											
+											
+										</span>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="fondoTemp">
+										
+				    						
+										
+										<a href="#" onclick="window.location.href='/web/predicion/localidades/localidadesIndex.action?idZona=36038'">Pontevedra</a>
+									</td>
+									<td class="t17 centrar">
+										<span class="centrar">
+											
+												&nbsp;17&deg;
+											
+											
+										</span>									
+									</td>
+									<td class="t28 centrar">
+										<span>
+											
+												&nbsp;28&deg;
+											
+											
+										</span>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="fondoTemp">
+										
+				    						
+										
+										<a href="#" onclick="window.location.href='/web/predicion/localidades/localidadesIndex.action?idZona=15078'">Santiago de Compostela</a>
+									</td>
+									<td class="t17 centrar">
+										<span class="centrar">
+											
+												&nbsp;17&deg;
+											
+											
+										</span>									
+									</td>
+									<td class="t30 centrar">
+										<span>
+											
+												&nbsp;30&deg;
+											
+											
+										</span>
+									</td>
+								</tr>
+							
+								<tr>
+									<td class="fondoTemp">
+										
+				    						
+										
+										<a href="#" onclick="window.location.href='/web/predicion/localidades/localidadesIndex.action?idZona=36057'">Vigo</a>
+									</td>
+									<td class="t17 centrar">
+										<span class="centrar">
+											
+												&nbsp;17&deg;
+											
+											
+										</span>									
+									</td>
+									<td class="t25 centrar">
+										<span>
+											
+												&nbsp;25&deg;
+											
+											
+										</span>
+									</td>
+								</tr>
+													
+								
+							</tbody>				
+						</table>
+						
+						<br/>
+						
+						<table  class="temperatrasTabla">
+							<tr>		  					    
+		  					    <td>
+		  					    	<ul class="enlaceMais">
+		  					    		
+										<li>
+											<a href="/web/predicion/localidades/localidadesIndex.action">Informaci&oacute;n para m&aacute;is concellos.</a>
+										</li>
+									</ul>
+								</td>
+		  					</tr>	
+						</table>
+						
+						<br/>
+						
+						<table class="temperatrasTabla">
+							<tr>
+								<td colspan="6">
+									<span class="titulo3 textoGris">Tendencia:</span>
+								</td>
+							</tr>							
+							<tr>
+								<td>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td class="titulo4 textoGris">
+									M&iacute;nimas 
+								</td>
+
+								<td>
+									<img src="/datosred/infoweb/meteo/imagenes/termometros/404.png" alt="Tendencia MIN" title="Tendencia MIN"/>
+								</td>
+								<td>
+									&nbsp;&nbsp;&nbsp;&nbsp;
+								</td>
+								<td class="titulo4 textoGris">
+									M&aacute;ximas
+								</td>
+								<td>
+									<img src="/datosred/infoweb/meteo/imagenes/termometros/401.png" alt="Tendencia MAX" title="Tendencia MAX"/>
+								</td>								
+							</tr>
+														
+						</table>
+
+						<div class="linkPDF floatRight margenSup10">															
+							<span>							
+																							
+									<a href='/datosred/infoweb/operativo/pdfsweb/d0_gl.pdf' target="_blank">
+										<img class="img" src="images/cousas/Acrobat.gif" alt="acrobat" title="acrobat"/>
+										&nbsp;Predici&oacute;n do xoves
+									</a>
+																																			
+							</span>
+						</div>
+						
+
+										
+					</div>	
+					
+					<br clear="all"/>
+					
+					<div id="comentarioEspecial">
+						
+										
+
+					</div>
+									
+				</div>
+				
+			</div>
+		</div>
+		
+		<div id="contenedores">
+			<div id="c1" class="target"  withHandles="true">
+			<div id="divRadar">
+		<div  class="dojoDndHandle">
+			<div class="cabecera">
+				<span class="tituloCaja">Imaxe de radar:</span>
+			</div>
+		</div>
+		<div  id="Radar" class="Radar">
+			<div class="ElementoXeralNodos">
+			
+				<div class="centrar">
+				<a href="http://www.meteogalicia.es/observacion/radar/radar.action?request_locale=gl">
+					<img src="/datosred/radar/web_ultima_PPI.png" alt= "radar" width="250"/>
+				</a><br />
+				<span class="coment colorPeCaixa">Imaxe do d&iacute;a 11/07/2013&nbsp;procesada &aacute;s&nbsp;18:28 h.</span><br/>								
+				</div>				
+				<ul class="enlaceMais">
+					<li><a href="http://www.meteogalicia.es/observacion/radar/radar.action?request_locale=gl">m&aacute;is...</a></li>					
+				</ul>
+			
+							
+			</div>
+		</div>
+	</div>
+			</div>
+			<div id="c2" class="target"  withHandles="true">
+			<div id="divSatelite">
+		<div  class="dojoDndHandle">
+			<div class="cabecera">
+				<span class="tituloCaja">Imaxe de sat&eacute;lite:</span>
+			</div>
+		</div>
+		<div  id="Satelite" class="Satelite">
+			<div class="ElementoXeralNodos">
+			
+				<div class="centrar">					
+					<a href="http://www.meteogalicia.es/observacion/satelite/sateliteIndex.action?request_locale=gl">
+						<img src="/datosred/satelite/ULTIMOS_30_DIAS/IMAGENES/Miniaturas/web_inicio.jpg" alt= "satelite" height="212" />												
+					</a><br />
+					<span class="coment colorPeCaixa">Imaxe do d&iacute;a 11/07/2013&nbsp;procesada &aacute;s&nbsp;18:22 h.</span>					
+				</div>	
+				<ul class="enlaceMais">
+					
+					<li><a href="http://www.meteogalicia.es/observacion/satelite/sateliteProduto.action?tipo=isobaras&request_locale=gl">mapas de isobaras</a></li>
+					<li><a href="http://www.meteogalicia.es/observacion/satelite/sateliteVideo.action?request_locale=gl">v&iacute;deos e animaci&oacute;ns</a></li>
+					<li><a href="http://www.meteogalicia.es/observacion/satelite/sateliteIndex.action?request_locale=gl">m&aacute;is...</a></li>
+				</ul>
+			
+			
+			</div>
+		</div>
+	</div>
+			
+			</div>
+			<br clear="all" />
+			<div id="c3" class="targetPlus"  withHandles="true">
+			<div id="divNovas">
+		<div  class="dojoDndHandlePlus">
+			<div class="cabeceraPlus">
+				<div class="edit">	
+					
+							
+						
+					<a href="/web/RSS/rssNovas.action?request_locale=gl"><img class="floatRight" src="/web/images/cousas/rss-icon.png" alt="rss"/></a>
+				</div>	
+				<span class="tituloCaja">Novas:</span>
+			</div>
+		</div>
+		
+		<div id="Novas"  class="Novas"> 
+			<div class="ElementoXeralNodosPlus">
+				
+    			
+    			
+    			<div class="itemCaixaNovas" >
+    				
+    			    <div>
+    				   	<div class="izquierda70">
+    						<img  src="/web/images/principal/cuadrado.png" alt="icoLista"/>&nbsp;<span class="titulo1 destacada0">Premios do programa MeteoEscolas 2012-2013</span><br/>
+    					</div >
+    					<div class="derecha30">
+    						<img class="img" width="93" src="http://www.meteogalicia.es/datosred/infoweb/meteo/imagenes/logos/logo_plan_proxecta_para_sogama.jpg"  alt="imaxe_nova" />
+    					</div>
+					</div>
+    				
+    				
+    				<span class="listaLinksNovas texto destacada0" id="titNovas" >1&ordm;:IES Ram&oacute;n Caama&ntilde;o, 2&ordm;:CPI Conde de Fenosa, 3&ordm;:CEIP Manuel Masd&iacute;as</span>
+    				
+    				<div class="listaLinksNovas">
+    				
+					<!--  url con texto definido en la BD -->
+						
+						<!-- url con texto máis -->
+						
+							<ul class="enlaceMais">
+								<li><a href="http://www2.meteogalicia.es/galego/observacion/climantica/premios.asp" target="_blank">m&aacute;is...</a></li>
+							</ul>
+						
+							<!-- url con icono de pdf -->
+						
+					 
+					</div>
+				
+				</div>
+				 
+    			
+				
+				
+    			
+    			
+    			<div class="itemCaixaNovas" >
+    				
+    				
+    					<img  src="/web/images/principal/cuadrado.png" alt="icoLista"/>&nbsp;<span class="titulo1 destacada0">Informe Climatol&oacute;xico Mensual</span><br/>
+    				
+    				<span class="listaLinksNovas texto destacada0" id="titNovas" ></span>
+    				
+    				<div class="listaLinksNovas">
+    				
+					<!--  url con texto definido en la BD -->
+						
+						<!-- url con texto máis -->
+						
+							<!-- url con icono de pdf -->
+						
+							<span class="texto">Mes de xu&ntilde;o de 2013</span> <a href="/datosred/infoweb/clima/informes/estacions/mensuais/2013/201306_gl.pdf"  target="_self"><img class="img" src="images/cousas/Acrobat.gif" alt="acrobat" /></a>
+							<br/>
+						
+					
+					<!--  url con texto definido en la BD -->
+						
+						<!-- url con texto máis -->
+						
+							<ul class="enlaceMais">
+								<li><a href="http://www.meteogalicia.es/observacion/informesclima/informesIndex.action" target="_blank">m&aacute;is...</a></li>
+							</ul>
+						
+							<!-- url con icono de pdf -->
+						
+					 
+					</div>
+				
+				</div>
+				 
+    					
+				<br clear="all"/>
+				
+				
+				
+    			
+    			
+    			<div class="itemCaixaNovas" >
+    				
+    			    <div>
+    				   	<div class="izquierda70">
+    						<img  src="/web/images/principal/cuadrado.png" alt="icoLista"/>&nbsp;<span class="titulo1 destacada0">MeteoEscolas - Plan Proxecta</span><br/>
+    					</div >
+    					<div class="derecha30">
+    						<img class="img" width="93" src="http://www.meteogalicia.es/datosred/infoweb/meteo/imagenes/logos/logo_plan_proxecta_para_sogama.jpg"  alt="imaxe_nova" />
+    					</div>
+					</div>
+    				
+    				
+    				<span class="listaLinksNovas texto destacada0" id="titNovas" >Descrici&oacute;n do programa, actividades e recursos.</span>
+    				
+    				<div class="listaLinksNovas">
+    				
+					<!--  url con texto definido en la BD -->
+						
+						<!-- url con texto máis -->
+						
+							<ul class="enlaceMais">
+								<li><a href="http://www.edu.xunta.es/web/node/6218" target="_blank">m&aacute;is...</a></li>
+							</ul>
+						
+							<!-- url con icono de pdf -->
+						
+					 
+					</div>
+				
+				</div>
+				 
+    			
+				
+				
+    			
+    			
+				 <br clear="all"/>
+				<ul class="enlaceOutros">
+					<li>
+					<a href="/web/informacion/novasIndex.action">
+					Outras novas
+					</a></li>
+				</ul>
+				
+    		</div>
+		</div>
+	</div>
+			
+			</div>
+		</div>
+
+	</div>
+	
+	
+	<div id="columnDerCont" >			
+		<div id="adversos">
+			<div class="dojoDndHandle"><!-- interior -->
+			
+				<div class="cabecera">
+					
+							
+					
+					<a href="/web/RSS/rssAdversos.action?request_locale=gl"><img  class="floatRight margenRSSFijo" src="/web/images/cousas/rss-icon.png" alt="rss"/></a>
+ 					<span class="tituloCaja">Zonas de adverso meteorol&oacute;xico:</span>
+ 					
+ 				</div>
+ 			</div>
+ 			<div>
+ 				<div class="ElementoXeralNodos"><!-- contenido -->
+	
+					<div class="izquierda centrar"><span class="titulo2 textoGris">hoxe</span></div>
+					<div class="derecha centrar"><span class="titulo2 textoGris">Ma&ntilde;&aacute;</span></div>
+
+
+					<img src="/datosred/infoweb/meteo/imagenes/adversos/hoxeInicio.jpg " alt="Adverso hoxe" title="Adverso hoxe"/>
+					<img src="/datosred/infoweb/meteo/imagenes/adversos/manhaInicio.jpg" alt="Adverso Ma&ntilde;&aacute;" title="Adverso Ma&ntilde;&aacute;"/>
+
+					<br/>
+					<table id="tabAdv">
+					<tr>
+						<td>
+							<div id="alerta0" class="alertas"></div>
+						</td>
+						<td>
+							<span>Non hai alertas</span>
+						</td>
+						<td>
+							<div id="alerta1" class="alertas"></div>
+						</td>
+						<td>	
+							<span>Alerta amarela</span>
+						</td>
+					</tr>
+					  <tr>
+						<td>
+							<div id="alerta2" class="alertas"></div>
+						</td>
+						<td>
+							<span>Alerta laranxa</span>
+						</td>
+						<td>
+							<div id="alerta3" class="alertas"></div>
+						</td>
+						<td>	
+							<span>Alerta vermella</span>
+						</td>
+					</tr>
+					</table>
+					
+					<br/>
+					  
+		    	
+					<ul class="enlaceMais">
+						
+						<li><a href="/web/adversos/adversosIndex.action">Informaci&oacute;n de adversos para hoxe e ma&ntilde;&aacute;.</a>&nbsp;</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+ 	</div>
+	
+	
+	
+	<div id="columnDerInformes" >
+		<div id="informes">
+			<div class="dojoDndHandle">
+				<div class="cabecera">
+ 					<span class="tituloCaja">Informes Meteorol&oacute;xicos</span>
+ 				</div>
+ 			</div><div>
+ 				<div class="ElementoXeralNodos">		  
+					<div class="izquierda60">
+					<ul class="enlaceMais">						
+						<li><a href='http://www2.meteogalicia.es/galego/observacion/estacions/listaEstacions.asp' target="_blank">								
+								Acceso a datos		
+							</a>
+						</li>
+						<li><a href='http://siam.cmati.xunta.es/formulario-web' target="_blank">								
+								Solicitude de informes								
+							</a>
+						</li>
+					</ul>
+					</div>
+					<div class="derecha40">
+					<ul class="enlaceInfo">						
+						<li>
+							<a href='/datosred/infoweb/meteo/docs/informes/datos_gl.pdf' target="_blank">								
+								Informaci&oacute;n								
+							</a>
+						</li>
+						<li>
+							<a href='/datosred/infoweb/meteo/docs/informes/informes_gl.pdf' target="_blank">								
+								Informaci&oacute;n								
+							</a>
+						</li>
+					</ul>
+					</div>
+				</div>
+			</div>
+		</div>		
+
+		<div style="margin-top:8px" class="ElementoXeral">
+			<div class="interior">
+			    <div class="contenidoRedes centrar" id="redes">
+				<span class="texto">S&iacute;ganos en: </span> 
+				<a href="http://twitter.com/meteogalicia" target="_blank" >
+ 				<img  src="/web/images/principal/icoTwitter.png" alt="twitter" title="twitter"/>
+ 				</a>
+ 				<a href="http://www.facebook.com/meteogalicia.es" target="_blank" >
+ 				<img  src="/web/images/principal/icono-facebook.png" alt="facebook" title="facebook"/>
+ 				</a>
+ 				<!-- Icono do RSS -->				
+ 				
+				<a href="/web/RSS/rssIndex.action"><img  src="/web/images/principal/rss-icon32.png" alt="rss" title="rss"/></a>
+								
+				<a href="/web/proxectos/meteosix.action"><img id="icoAndroid" src="/web/images/principal/meteosix_02.png" alt="Android-Ios-MeteoSIX" title="Android-Ios-MeteoSIX"/></a>
+ 				</div>
+ 			</div>
+ 		</div>
+ 		<div id="c4" class="target"  withHandles="true">
+ 		<div id="divModelos">
+		<div  class="dojoDndHandle">
+			<div class="cabecera">
+				<span class="tituloCaja">Modelos num&eacute;ricos:</span>
+			</div>
+		</div>
+		<div  id="Modelos" class="Modelos">
+			<div class="ElementoXeralNodos">
+				 <div id="aModelos" class="aModelos">
+					<div  class="centrar">
+    					<img src="/web/images/cousas/cargando_p.gif" alt="cargando"/>
+    				</div>    				
+				</div> 
+			</div>
+		</div>
+	</div>
+ 		
+ 		</div>
+ 		<!-- Caixa do twitter -->
+ 		
+ 		<div style="margin-top:8px;margin-left:3px" >
+ 		 
+ 		 <a class="twitter-timeline"  width="310px"  height="300" href="https://twitter.com/MeteoGalicia"  data-widget-id="312490524651159552" lang="ES">Tweets por @MeteoGalicia</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	 
+		</div>
+		
+	
+		 		
+	</div>	
+		
+		
+</div>
+
+<script type="text/javascript">
+	dojo.require("dojo.fx");
+</script>
+<br clear="all" />
+<div id="menuInf">
+	
+	<div id="iconosMenuInf">
+		<a name="anclaMenu" id="anclaMenu">&nbsp;</a>
+		
+		<a href="/web/RSS/rssIndex.action"><img src="/web/images/cousas/rss-icon.png" alt="rss" title="rss"/></a>&nbsp;
+		<a href="http://www.twitter.com/meteogalicia" target="_blank">
+			<img src="/web/images/cousas/twitter-03.png" alt="twitter" title="twitter"/>
+		</a>&nbsp;
+		<a href="http://www.facebook.com/meteogalicia.es" target="_blank">
+			<img src="/web/images/cousas/facebook.png" alt="facebook" title="facebook"/>
+		</a>
+	</div>
+	<div id="tituloMenuInf">
+		<img class="fxImg" alt='M&aacute;is MeteoGalicia...' title='M&aacute;is MeteoGalicia...' src="/web/images/principal/arrow.png" onClick="doAnimationMenu('corpoMenuInf',this)"/>&nbsp;&nbsp;
+		<span class="titulo">M&aacute;is MeteoGalicia...</span>
+	</div>
+	<div id="corpoMenuInf">
+		<div id="menu1" class="cont">
+			
+			
+			<ul>Servizos Web
+				<li><a href="/web/RSS/rssIndex.action">RSS, GeoRSS, XML e Podcast</a>,
+				<a href="http://twitter.com/meteogalicia" target="_blank" >Twitter</a>, 
+				<a href="http://www.facebook.com/meteogalicia.es" target="_blank" >Facebook</a>,
+				<a href="/web/informacion/usuario/avisosRSS.action">Avisos e actualizaci&oacute;ns</a>				
+				</li>
+			</ul>
+			<ul>
+				
+				<a href="/web/informacion/contactoIndex.action">Contacto</a>					
+			</ul>
+			
+			<ul>
+				
+				<a href="/web/informacion/galeria/galeriaIndex.action">Galer&iacute;a de imaxes</a>
+			</ul>
+			
+						
+		</div>
+		<div id="menu2" class="cont">		
+			 <ul>
+			 	
+			 	<a href="/web/formacion/formacionIndex.action">Formaci&oacute;n e MeteoEscolas</a>							
+			</ul>
+			
+			<ul>
+				
+				<a href="/web/informacion/ligazonsIndex.action">Ligaz&oacute;ns</a>
+				
+				<li>
+					<a href="http://www.marnaraia.org/" target="_blank">Observatorio oce&aacute;nico RAIA</a>,
+					<a href="http://cambioclimatico.cmati.xunta.es/" target="_blank">Cambio clim&aacute;tico</a>,
+					<a href="http://siam.cmati.xunta.es/presentacion-do-proxecto-cligal" target="_blank">CLIGAL</a>,
+					
+					<a href="/web/proxectos/meteosix.action">MeteoSIX</a>					
+				</li>
+			</ul>
+			<ul>
+				
+				<a href="/web/informacion/novasIndex.action">Novas</a>				
+			</ul>	
+			
+		</div>
+	 	<div id="menu3" class="cont">
+			<ul>Informes Meteorol&oacute;xicos
+				<li><a href="http://www2.meteogalicia.es/galego/observacion/estacions/listaEstacions.asp">Acceso a datos</a>,
+				<a href="http://siam.cmati.xunta.es/formulario-web">Solicitude de informes</a></li>
+			</ul>
+			<ul><a href="http://www.meteogalicia.es/suxestions/iso/isoIndex.action?request_locale=gl">Env&iacute;o de Suxesti&oacute;ns</a>
+			</ul>
+			
+			<ul>
+				
+				<a href="/web/informacion/notaIndex.action">Nota legal</a>					
+			</ul>
+			
+		</div>				
+		<br/>
+	</div>
+		
+	<div class="aclaracionExplorador">
+		<img src="/web/images/cousas/ico_IE.png" alt="Internet Explorer" title="Internet Explorer"/>
+		<img src="/web/images/cousas/ico_Firefox.png" alt="Firefox" title="Firefox"/>						
+		Esta web est&aacute; optimizada para Internet Explorer 9 e Firefox 11			
+	</div>
+		
+</div>   
+
+
+
+
+
+
+
+
+<div class="hide">
+	<div id="divError">
+		<span>Datos non dispo&ntilde;ibles</span>
+	</div>
+	
+	
+	<!-- *********************************************************************** -->
+
+    <div id="cargando">
+    	<div  class="centrar">
+    		<img src="/web/images/cousas/cargando_p.gif" alt="cargando"/>
+    	</div>
+    </div>
+
+</div>
+		
+			<div id="pe">
+			     
+				<div id="intpe">
+					<div id="subpe3">
+				   <a href="http://www.xunta.es" target="_blank"><img id="logoXuntaPe" src="/web/images/main/logos/logoXuntaPe.png " alt="Logo Xunta" /></a>&nbsp;
+				   </div>
+					<div id="subpe1">
+						MeteoGalicia - Conseller&iacute;a de Medio Ambiente, Territorio e Infraestruturas - Xunta de Galicia
+		  				<br/>
+		  				<a href="http://www.meteogalicia.es/web/informacion/notaIndex.action?request_locale=gl">Nota legal</a> | <a href="/web/informacion/contactoIndex.action">
+							Contactar
+						</a>
+						
+						<span id="version">03-06-2013</span>
+					</div>
+					<div id="subpe2">
+						Tel&eacute;fono: +34-881-999654
+						<br/>
+						Fax: +34-981-957466
+					</div>
+					<div id="subpe4">
+				   <img id="logoMarcaGalicia" src="/web/images/main/logos/marca_galicia.png " alt="Logo Marca Galicia" />&nbsp;
+				   </div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div class="oculto" id="menuPredicion">
+		<ul id="enlaces" class="nav-horizontal">
+			<li class="primero"><a href="/web/predicion/cprazo/cprazoIndex.action">				 
+					<span>Galicia</span>
+			</a></li>
+			<li><a href="/web/predicion/localidades/localidadesIndex.action">
+					<span>Concellos</span>
+			</a></li>
+			
+			<li><a href="http://www2.meteogalicia.es/galego/prediccion/maritima/maritima.asp">
+					<span>Mar&iacute;tima</span>
+			</a></li>
+					
+			<li>
+				<a href="/web/tablasMaritimas/index.action">
+					<span>Portos e confrar&iacute;as</span>
+				</a>
+			</li>	
+			<li>
+				<a href="/web/predicion/maritima/mareasIndex.action">
+					<span>Mareas e l&uacute;as</span>
+				</a>
+			</li>
+			<li>
+				
+			<a href="/web/predicion/xacobeo/xacobeoIndex.action"><span>Cami&ntilde;os </span></a></li>
+     
+     		<li>
+				<a href="/web/predicion/cortes/cortesIndex.action"><span>Cortes voz</span></a>
+     		</li>
+     		
+     		<li>
+				<a href="/web/adversos/adversosIndex.action"><span>Adversos</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/predicion/orto/ortoIndex.action"><span>Orto e ocaso</span></a>
+			</li>
+			
+			<li>
+				<a href="http://www.meteogalicia.es/uv/observacionIndex.action?request_locale=gl">
+					<span>Ultravioleta</span></a>
+			</li>	
+			
+			
+			<li>
+				<a href="/web/predicion/praias/praiasIndex.action"><span>Praias</span></a>
+			</li>
+			
+			<li><a href="http://www.meteogalicia.es/uv/vagacalor.action?request_locale=gl">
+					<span>Vaga de calor</span></a>
+			</li>
+			
+		</ul>	
+	</div>
+	
+	<div class="oculto" id="menuObservacion">
+		<ul id="enlaces" class="nav-horizontal">
+			<li class="primero"><a href="http://www2.meteogalicia.es/galego/observacion/estacions/estacions.asp">
+					<span>Rede meteorol&oacute;xica</span><!-- menuSup.estMeteo -->
+			</a></li>
+			<li><a href="http://www2.meteogalicia.es/galego/observacion/plataformas/plataformas.asp">
+					<span>Rede oceanogr&aacute;fica</span><!-- menuSup.estMeteo -->
+			</a></li>
+			<li><a href="http://www.meteogalicia.es/agroMeteo/index.action" target='_blank'>
+					<span>Agrometeorolox&iacute;a</span>
+				</a>				
+			</li>
+			
+			<li><a href="http://www2.meteogalicia.es/galego/observacion/bloom/plataformas.asp">
+			<span>Encoros</span>
+			</a></li>
+			
+			 <li><a href="http://www.meteogalicia.es/observacion/satelite/sateliteIndex.action?request_locale=gl">
+					<span>Sat&eacute;lite</span>
+			</a></li>
+			
+			<li><a href="http://www.meteogalicia.es/observacion/radiosondaxe/radioIndex.action?request_locale=gl">
+					<span>RadioSondaxe</span>
+			</a></li>
+	
+			<li><a href="http://www2.meteogalicia.es/NovoXeollador/xeohoxeN.asp" target="_blank">
+			<span>Xeollador</span>
+			</a></li>
+			
+			<li><a href="http://www.meteogalicia.es/observacion/raios/raios.action?request_locale=gl">
+					<span>Raios</span>
+			</a></li>
+		
+			<li><a href="http://www.meteogalicia.es/observacion/radar/radar.action?request_locale=gl">
+					<span>Radar</span>
+			</a></li>			
+		</ul>
+	</div>
+	
+	
+	<div class="oculto" id="menuPublicacions">
+		<ul id="enlaces" class="nav-horizontal">
+			<li class="primero">
+				<a href="http://www.meteogalicia.es/observacion/informesclima/informesIndex.action?request_locale=gl">
+				<span>Anuarios e informes</span>
+				</a>
+			</li>
+			<li>
+				<a href="/web/informacion/publicacions/singulares.action"><span>An&aacute;lise</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/informacion/publicacions/artigos.action"><span>Artigos cient&iacute;ficos</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/informacion/publicacions/libros.action"><span>Libros</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/informacion/publicacions/proxectos.action"><span>Proxectos investigaci&oacute;n</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/informacion/publicacions/redes.action"><span>Redes investigaci&oacute;n</span></a>
+			</li>
+			
+			<li>
+				<a href="/web/informacion/publicacions/proceedings.action"><span>Conferencias</span></a>
+			</li>
+			
+			<li>
+				<a href="http://www.meteogalicia.es/observacion/atlasrs/atlasrsIndex.action?request_locale=gl">
+					Atlas de radiaci&oacute;n solar
+				</a>
+			</li>			
+    	</ul>
+	</div>
+	
+	<div class="oculto" id="menuModelos">
+		<ul id="enlaces" class="nav-horizontal">		
+			<li class="primero">
+				<a href="http://www.meteogalicia.es/modelos/index.action?request_locale=gl">				
+					<span>Imaxes dos modelos</span>
+				</a>
+			</li>
+			<li>
+				<a href="/web/modelos/threddsIndex.action"><span>Servidor THREDDS</span></a>
+			</li>
+			<li>
+				<a href="/web/proxectos/meteosix.action"><span>MeteoSIX</span></a>
+			</li>			
+    	</ul>	
+	</div>
+	
+	<div class="oculto" id="menuCAire">
+        <ul id="enlaces" class="nav-horizontal">
+                   <li class="primero">
+                           <a href="http://www.meteogalicia.es/Caire/index.action?request_locale=gl">
+                           <span>&Iacute;ndice Calidade do Aire</span>
+                           </a>
+                   </li>
+                   <li>
+                       <a href="http://www.meteogalicia.es/modelos/cargarNodo.action?grupo=gr5&modelo=chimere&saida=chimere_s1&tipoImaxe=chimere_t1&malla=chimere">
+							Predici&oacute;n
+						</a>
+                   </li>
+                   <li>
+                           <a href="http://www.meteogalicia.es/Caire/datos.action?request_locale=gl">
+                                   Consulta de datos
+                           </a>
+                   </li>
+                   <li>
+                           <a href="http://www.meteogalicia.es/Caire/informacionCaire.action?request_locale=gl">
+                                   Informaci&oacute;n
+                           </a>
+                   </li>
+                   <li>
+                           <a href="http://www.meteogalicia.es/Caire/informesCaire.action?request_locale=gl">
+                                   Informes
+                           </a>
+                   </li>
+                   <li>
+                           <a href="http://www.meteogalicia.es/Caire/estacionsCaire.action?request_locale=gl">
+                                   Descrici&oacute;n da Rede
+                           </a>
+                   </li>
+                   <li>
+                           <a href="http://WWW.meteogalicia.es/contAcustica/consultaIndex.action?request_locale=gl">
+                                   Contaminaci&oacute;n Ac&uacute;stica
+                           </a>
+                   </li>
+        </ul>
+	</div>
+	<!-- 
+	<div class="oculto" id="menuIndex">
+	sfjhsdfjhsdjfh
+	</div>
+	 -->
+
+</body>
+</html>
