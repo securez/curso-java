@@ -10,7 +10,7 @@
     </parent>
 
     <groupId>org.esquivo</groupId>
-    <artifactId>weatherdb-web</artifactId>
+    <artifactId>weather-web</artifactId>
     <packaging>war</packaging>
 
     <properties>
