@@ -152,8 +152,6 @@ public class WeatherData implements Serializable {
     }
 
     // Measured in km/h.
-    // TODO Study how to convert other measures including (knots, weak,
-    // moderate, strong)
     @Min(0)
     @Max(500)
     public Integer getWindSpeed() {
@@ -175,7 +173,6 @@ public class WeatherData implements Serializable {
     }
 
     // Measured in mm/h
-    // TODO Study how to convert other measures including (mm/h, l/m2h)
     @Min(0)
     @Max(1000)
     public Integer getPrecipitation() {
@@ -197,8 +194,6 @@ public class WeatherData implements Serializable {
     }
 
     // Measured in meters
-    // TODO Study how to convert other measures
-    // including (m, km, miles)
     @Min(0)
     @Max(100000)
     public Integer getVisibility() {
@@ -209,7 +204,6 @@ public class WeatherData implements Serializable {
         this.visibility = visibility;
     }
 
-    // TODO Validate humidity is between 0 and 100
     @Min(0)
     @Max(100)
     public Integer getHumidity() {
