@@ -85,7 +85,7 @@ public class URLDownloaderTest extends ServerTestBase {
 		// GIVEN : A download class
 		
 		// WHEN : Download form valid URL
-		File file = down.download(new URL(serverUrl + "?size=128"));
+		File file = down.download(new URL(serverUrl + "/?size=128"));
 		
 		// THEN : The file is stored
 		assertTrue(file.exists());
