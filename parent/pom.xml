@@ -1,59 +1,59 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
 
-    <parent>
-        <groupId>org.roisu</groupId>
-        <artifactId>curso-java</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
-    </parent>
-
+	<parent>
+		<groupId>org.roisu</groupId>
+		<artifactId>curso-java</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+    
     <artifactId>curso-java-parent</artifactId>
     <packaging>pom</packaging>
 
-    <properties>
-        <!-- Project wide properties -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.source>1.6</java.source>
-        <java.target>1.6</java.target>
+	<properties>
+		<!-- Project wide properties -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.source>1.6</java.source>
+		<java.target>1.6</java.target>
 
-        <!-- Dependencies versions -->
-        <junit.version>4.10</junit.version>
-        <jetty.version>8.1.11.v20130520</jetty.version>
-        <commons-logging.version>1.1.1</commons-logging.version>
-        <httpcomponents-httpclient.version>4.2.2</httpcomponents-httpclient.version>
-        <log4j.version>1.2.17</log4j.version>
-        <slf4j.version>1.7.5</slf4j.version>
-        <logback.version>1.0.13</logback.version>
-        <commons-cli.version>1.2</commons-cli.version>
-        <commons-beanutils.version>1.8.3</commons-beanutils.version>
-        <commons-io.version>2.4</commons-io.version>
+		<!-- Dependencies versions -->
+		<junit.version>4.10</junit.version>
+		<jetty.version>8.1.11.v20130520</jetty.version>
+		<commons-logging.version>1.1.1</commons-logging.version>
+		<httpcomponents-httpclient.version>4.2.2</httpcomponents-httpclient.version>
+		<log4j.version>1.2.17</log4j.version>
+		<slf4j.version>1.7.5</slf4j.version>
+		<logback.version>1.0.13</logback.version>
+		<commons-cli.version>1.2</commons-cli.version>
+		<commons-beanutils.version>1.8.3</commons-beanutils.version>
+		<commons-io.version>2.4</commons-io.version>
         <commons-lang.version>2.6</commons-lang.version>
-        <weld.version>1.1.13.Final</weld.version>
-        <jaxws-rt.version>2.2.5</jaxws-rt.version>
-        <deltaspike.version>0.5-SNAPSHOT</deltaspike.version>
-        <resteasy.version>3.0.1.Final</resteasy.version>
-        <cdi-api.version>1.0</cdi-api.version>
-        <quartz.version>2.1.7</quartz.version>
-        <hibernate-jpa-2.0-api.version>1.0.1.Final</hibernate-jpa-2.0-api.version>
+		<weld.version>1.1.13.Final</weld.version>
+		<jaxws-rt.version>2.2.5</jaxws-rt.version>
+		<deltaspike.version>0.5-SNAPSHOT</deltaspike.version>
+		<resteasy.version>3.0.1.Final</resteasy.version>
+		<cdi-api.version>1.0</cdi-api.version>
+		<quartz.version>2.1.7</quartz.version>
+		<hibernate-jpa-2.0-api.version>1.0.1.Final</hibernate-jpa-2.0-api.version>
         <htmlcleaner.version>2.4</htmlcleaner.version>
         <jaxws-rt.version>2.2.7</jaxws-rt.version>
         <httpclient.version>4.2.2</httpclient.version>
 
-        <!-- Maven plugin versions -->
-        <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
-        <cobertura-maven-plugin.version>2.5.2</cobertura-maven-plugin.version>
-        <maven.source.plugin.version>2.2.1</maven.source.plugin.version>
-        <maven.javadoc.plugin.vertsion>2.9</maven.javadoc.plugin.vertsion>
-        <maven.jetty.plugin.version>${jetty.version}</maven.jetty.plugin.version>
-        <maven.checkstyle.plugin.version>2.10</maven.checkstyle.plugin.version>
-        <maven.assembly.plugin.version>2.4</maven.assembly.plugin.version>
-    </properties>
+		<!-- Maven plugin versions -->
+		<maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
+		<cobertura-maven-plugin.version>2.5.2</cobertura-maven-plugin.version>
+		<maven.source.plugin.version>2.2.1</maven.source.plugin.version>
+		<maven.javadoc.plugin.vertsion>2.9</maven.javadoc.plugin.vertsion>
+		<maven.jetty.plugin.version>${jetty.version}</maven.jetty.plugin.version>
+		<maven.checkstyle.plugin.version>2.10</maven.checkstyle.plugin.version>
+		<maven.assembly.plugin.version>2.4</maven.assembly.plugin.version>
+	</properties>
 
-    <repositories>
-        <repository>
-            <id>Apache Repository</id>
-            <url>https://repository.apache.org/content/repositories/releases</url>
+	<repositories>
+		<repository>
+			<id>Apache Repository</id>
+			<url>https://repository.apache.org/content/repositories/releases</url>
             <releases>
                 <enabled>true</enabled>
                 <updatePolicy>never</updatePolicy>
@@ -61,260 +61,192 @@
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
-        </repository>
-        <repository>
-            <id>Apache Snapshot Repository</id>
-            <url>https://repository.apache.org/content/repositories/snapshots</url>
+		</repository>
+		<repository>
+			<id>Apache Snapshot Repository</id>
+			<url>https://repository.apache.org/content/repositories/snapshots</url>
             <releases>
                 <enabled>false</enabled>
             </releases>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
-        </repository>
-    </repositories>
+		</repository>
+	</repositories>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.eclipse.jetty</groupId>
-                <artifactId>jetty-server</artifactId>
-                <version>${jetty.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-logging</groupId>
-                <artifactId>commons-logging</artifactId>
-                <version>${commons-logging.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.httpcomponents</groupId>
-                <artifactId>httpclient</artifactId>
-                <version>${httpcomponents-httpclient.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>log4j</groupId>
-                <artifactId>log4j</artifactId>
-                <version>${log4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-cli</groupId>
-                <artifactId>commons-cli</artifactId>
-                <version>${commons-cli.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-beanutils</groupId>
-                <artifactId>commons-beanutils-core</artifactId>
-                <version>${commons-beanutils.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-io</groupId>
-                <artifactId>commons-io</artifactId>
-                <version>${commons-io.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
-            </dependency>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-server</artifactId>
+				<version>${jetty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-logging</groupId>
+				<artifactId>commons-logging</artifactId>
+				<version>${commons-logging.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>${httpcomponents-httpclient.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-cli</groupId>
+				<artifactId>commons-cli</artifactId>
+				<version>${commons-cli.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-beanutils</groupId>
+				<artifactId>commons-beanutils-core</artifactId>
+				<version>${commons-beanutils.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${commons-io.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
 
-            <!-- CDI -->
-            <dependency>
-                <groupId>javax.enterprise</groupId>
-                <artifactId>cdi-api</artifactId>
-                <version>${cdi-api.version}</version>
-            </dependency>
+			<!-- CDI -->
+			<dependency>
+				<groupId>javax.enterprise</groupId>
+				<artifactId>cdi-api</artifactId>
+				<version>${cdi-api.version}</version>
+			</dependency>
 
-            <!-- CDI dependencies for tests -->
-            <dependency>
-                <groupId>org.apache.deltaspike.cdictrl</groupId>
-                <artifactId>deltaspike-cdictrl-weld</artifactId>
-                <version>${deltaspike.version}</version>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.jboss.weld.se</groupId>
-                <artifactId>weld-se</artifactId>
-                <version>${weld.version}</version>
-                <scope>test</scope>
-            </dependency>
+			<!-- CDI dependencies for tests -->
+			<dependency>
+				<groupId>org.apache.deltaspike.cdictrl</groupId>
+				<artifactId>deltaspike-cdictrl-weld</artifactId>
+				<version>${deltaspike.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.jboss.weld.se</groupId>
+				<artifactId>weld-se</artifactId>
+				<version>${weld.version}</version>
+				<scope>test</scope>
+			</dependency>
 
-            <!-- Quartz -->
-            <dependency>
-                <groupId>org.quartz-scheduler</groupId>
-                <artifactId>quartz</artifactId>
-                <version>${quartz.version}</version>
-            </dependency>
+			<!-- Quartz -->
+			<dependency>
+				<groupId>org.quartz-scheduler</groupId>
+				<artifactId>quartz</artifactId>
+				<version>${quartz.version}</version>
+			</dependency>
 
-            <!-- JPA -->
-            <dependency>
-                <groupId>org.hibernate.javax.persistence</groupId>
-                <artifactId>hibernate-jpa-2.0-api</artifactId>
-                <version>${hibernate-jpa-2.0-api.version}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+			<!-- JPA -->
+			<dependency>
+				<groupId>org.hibernate.javax.persistence</groupId>
+				<artifactId>hibernate-jpa-2.0-api</artifactId>
+				<version>${hibernate-jpa-2.0-api.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-    <!-- Dependencies that all Java project will have -->
-    <dependencies>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+	<!-- Dependencies that all Java project will have -->
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <!-- Compiler plugin Java 1.5+ compatibility and activates annotation processors -->
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven.compiler.plugin.version}</version>
-                    <configuration>
-                        <source>${java.source}</source>
-                        <target>${java.target}</target>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-checkstyle-plugin</artifactId>
-                    <version>${maven.checkstyle.plugin.version}</version>
-                    <dependencies>
-                        <dependency>
-                            <groupId>org.roisu</groupId>
-                            <artifactId>project-rules</artifactId>
-                            <version>0.0.1-SNAPSHOT</version>
-                        </dependency>
-                    </dependencies>
-                    <configuration>
-                        <configLocation>javacourse/default-checks.xml</configLocation>
-                        <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                        <excludes>**/generated/*.java</excludes>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-source-plugin</artifactId>
-                    <version>${maven.source.plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <id>attach-sources</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>${maven.javadoc.plugin.vertsion}</version>
-                    <executions>
-                        <execution>
-                            <id>attach-javadocs</id>
-                            <goals>
-                                <goal>jar</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
+	<build>
+		<pluginManagement>
+			<plugins>
+				<!-- Compiler plugin Java 1.5+ compatibility and activates annotation processors -->
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven.compiler.plugin.version}</version>
+					<configuration>
+						<source>${java.source}</source>
+						<target>${java.target}</target>
+					</configuration>
+				</plugin>
+				<plugin>
+					<artifactId>maven-checkstyle-plugin</artifactId>
+					<version>${maven.checkstyle.plugin.version}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>${maven.source.plugin.version}</version>
+					<executions>
+						<execution>
+							<id>attach-sources</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>${maven.javadoc.plugin.vertsion}</version>
+					<executions>
+						<execution>
+							<id>attach-javadocs</id>
+							<goals>
+								<goal>jar</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
 
-                <plugin>
-                    <groupId>org.codehaus.mojo</groupId>
-                    <artifactId>cobertura-maven-plugin</artifactId>
-                    <version>${cobertura-maven-plugin.version}</version>
-                    <configuration>
-                        <instrumentation>
-                            <ignores>
-                                <ignore>org.slf4j.*</ignore>
-                            </ignores>
-                        </instrumentation>
-                    </configuration>
-                    <executions>
-                        <execution>
-                            <id>clean</id>
-                            <phase>pre-site</phase>
-                            <goals>
-                                <goal>clean</goal>
-                            </goals>
-                        </execution>
-                        <execution>
-                            <id>instrument</id>
-                            <phase>site</phase>
-                            <goals>
-                                <goal>instrument</goal>
-                                <goal>cobertura</goal>
-                            </goals>
-                        </execution>
-                    </executions>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
-
-    <reporting>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.8</version>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>cobertura-maven-plugin</artifactId>
-                <version>${maven.cobertura.plugin}</version>
-                <configuration>
-                    <formats>
-                        <format>xml</format>
-                        <format>html</format>
-                    </formats>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-report-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jxr-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>${maven.checkstyle.plugin.version}</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.roisu</groupId>
-                        <artifactId>project-rules</artifactId>
-                        <version>0.0.1-SNAPSHOT</version>
-                    </dependency>
-                </dependencies>
-                <configuration>
-                    <configLocation>javacourse/default-checks.xml</configLocation>
-                    <includeTestSourceDirectory>true</includeTestSourceDirectory>
-                    <excludes>**/generated/*.java</excludes>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>2.5.2</version>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.0.1</version>
-            </plugin>
-        </plugins>
-        
-    </reporting>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>cobertura-maven-plugin</artifactId>
+					<version>${cobertura-maven-plugin.version}</version>
+					<configuration>
+						<instrumentation>
+							<ignores>
+								<ignore>org.slf4j.*</ignore>
+							</ignores>
+						</instrumentation>
+					</configuration>
+					<executions>
+						<execution>
+							<id>clean</id>
+							<phase>pre-site</phase>
+							<goals>
+								<goal>clean</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>instrument</id>
+							<phase>site</phase>
+							<goals>
+								<goal>instrument</goal>
+								<goal>cobertura</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
 </project>
