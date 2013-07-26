@@ -76,7 +76,7 @@ public class CrawlWeatherDataService {
                 
                 wdata.setMaxTemp(data.getMaxTemp());
                 wdata.setMinTemp(data.getMinTemp());
-                wdata.setStartTime(data.getDate());
+                wdata.setTime(data.getDate());
                 
                 LOG.info("Adding new MeteoGalicia data for {} to DB", data.getTown());
                 service.persist(forecast);

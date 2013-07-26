@@ -41,7 +41,7 @@ public class Forecast implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
-    protected Date startTime;
+    protected Date time;
     protected Location location;
     protected Provider provider;
     protected List<WeatherData> weatherData;
@@ -50,8 +50,8 @@ public class Forecast implements Serializable {
 
     }
 
-    public Forecast(Date startTime, Location location, Provider provider) {
-        this.startTime = startTime;
+    public Forecast(Date time, Location location, Provider provider) {
+        this.time = time;
         this.location = location;
         this.provider = provider;
     }
@@ -69,14 +69,14 @@ public class Forecast implements Serializable {
     }
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false)
+    @Column(name = "forecast_time", nullable = false)
     @NotNull
-    public Date getStartTime() {
-        return startTime;
+    public Date getTime() {
+        return time;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     @ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE }, fetch = FetchType.EAGER)
