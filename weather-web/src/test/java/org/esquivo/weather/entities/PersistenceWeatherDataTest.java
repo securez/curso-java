@@ -26,8 +26,7 @@ public class PersistenceWeatherDataTest extends PersistenceTestBase {
         data.setForecast(forecast);
         
         
-        data.setStartTime(new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("26/06/2013 18:00"));
-        data.setEndTime(new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("26/06/2013 21:00"));
+        data.setTime(new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("26/06/2013 18:00"));
         
         data.setMinTemp(20);
         data.setMaxTemp(25);
@@ -48,7 +47,7 @@ public class PersistenceWeatherDataTest extends PersistenceTestBase {
         createEntityManager();
         
         WeatherData data2 = em.find(WeatherData.class, data.getId());
-        Assert.assertEquals(data.getStartTime(), data2.getStartTime());
+        Assert.assertEquals(data.getTime(), data2.getTime());
         Assert.assertEquals(data, data2);
     }
 

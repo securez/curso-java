@@ -21,11 +21,9 @@ public class PersistenceWindGuruDataTest extends PersistenceTestBase {
         WindGuruData data = new WindGuruData();
         forecast.addWeatherData(data);
         
-        data.setStartTime(new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("26/06/2013 18:00"));
-        data.setEndTime(new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("26/06/2013 21:00"));
+        data.setTime(new SimpleDateFormat("dd/MM/yyyy HH:mm").parse("26/06/2013 18:00"));
         
         // Es posible que de problemas al no haber persistido todavia la localización en BD
-        // TODO Realizar pruebas para analizar comportamiento
         data.setForecast(forecast);
         data.setMinTemp(15);
         data.setMaxTemp(20);

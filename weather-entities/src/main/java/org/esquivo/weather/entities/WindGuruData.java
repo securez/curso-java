@@ -28,12 +28,11 @@ public class WindGuruData extends WeatherData implements Serializable {
  
     }
 
-    public WindGuruData(Date startTime, Date endTime, Forecast forecast, Integer maxTemp, Integer minTemp,
+    public WindGuruData(Date time, Forecast forecast, Integer maxTemp, Integer minTemp,
             Integer windSpeed, Integer windDirection, Integer precipitation, Integer cloudiness,
             Integer visibility, Integer humidity, Integer cloudCoverHigh, Integer cloudCoverMid, Integer cloudCoverLow) {
         super();
-        this.startTime = startTime;
-        this.endTime = endTime;
+        this.time = time;
         this.forecast = forecast;
         this.maxTemp = maxTemp;
         this.minTemp = minTemp;

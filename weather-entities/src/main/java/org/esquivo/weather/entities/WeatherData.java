@@ -22,7 +22,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import javax.persistence.Transient;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
@@ -52,8 +51,7 @@ public class WeatherData implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
-    protected Date startTime;
-    protected Date endTime;
+    protected Date time;
     protected Forecast forecast;
     protected Integer maxTemp;
     protected Integer minTemp;
@@ -68,12 +66,11 @@ public class WeatherData implements Serializable {
 
     }
 
-    public WeatherData(Date startTime, Date endTime, Forecast forecast, Integer maxTemp, Integer minTemp,
+    public WeatherData(Date time, Forecast forecast, Integer maxTemp, Integer minTemp,
             Integer windSpeed, Integer windDirection, Integer precipitation, Integer cloudiness,
             Integer visibility, Integer humidity) {
         super();
-        this.startTime = startTime;
-        this.endTime = endTime;
+        this.time = time;
         this.forecast = forecast;
         this.maxTemp = maxTemp;
         this.minTemp = minTemp;
@@ -98,23 +95,14 @@ public class WeatherData implements Serializable {
     }
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(nullable = false)
+    @Column(name = "weather_time", nullable = false)
     @NotNull
-    public Date getStartTime() {
-        return startTime;
+    public Date getTime() {
+        return time;
     }
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    @Temporal(TemporalType.TIMESTAMP)
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
+    public void setTime(Date time) {
+        this.time = time;
     }
 
     // bi-directional many-to-one association to Location
@@ -152,8 +140,6 @@ public class WeatherData implements Serializable {
     }
 
     // Measured in km/h.
-    // TODO Study how to convert other measures including (knots, weak,
-    // moderate, strong)
     @Min(0)
     @Max(500)
     public Integer getWindSpeed() {
@@ -175,7 +161,6 @@ public class WeatherData implements Serializable {
     }
 
     // Measured in mm/h
-    // TODO Study how to convert other measures including (mm/h, l/m2h)
     @Min(0)
     @Max(1000)
     public Integer getPrecipitation() {
@@ -197,8 +182,6 @@ public class WeatherData implements Serializable {
     }
 
     // Measured in meters
-    // TODO Study how to convert other measures
-    // including (m, km, miles)
     @Min(0)
     @Max(100000)
     public Integer getVisibility() {
@@ -209,7 +192,6 @@ public class WeatherData implements Serializable {
         this.visibility = visibility;
     }
 
-    // TODO Validate humidity is between 0 and 100
     @Min(0)
     @Max(100)
     public Integer getHumidity() {
@@ -220,11 +202,6 @@ public class WeatherData implements Serializable {
         this.humidity = humidity;
     }
     
-    @Transient
-    public boolean isDateRange() {
-        return (this.endTime != null);
-    }
-
     @Override
     public int hashCode() {
         return HashCodeBuilder.reflectionHashCode(this, new String[] { "id" });
