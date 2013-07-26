@@ -15,24 +15,10 @@ import junit.framework.Assert;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-public class HCDownloaderTest {
-	private static TestServer server;
-
-	@BeforeClass
-	public static void startServer() throws Exception {
-		server = new TestServer(8080);
-		server.getServerJetty().start();
-	}
-
-	@AfterClass
-	public static void stopServer() throws Exception {
-		server.getServerJetty().stop();
-	}
+public class HCDownloaderTest extends ServerTestBase {
 
 	@Test(expected = SocketTimeoutException.class)
 	public void TimeoutOptionsMustThrowException() throws IOException {
@@ -44,7 +30,7 @@ public class HCDownloaderTest {
 
 		// WHEN : Download form valid URL
 		try {
-			down.download(new URL("http://localhost:8080/?sleep=1000"));
+			down.download(new URL(serverUrl + "/?sleep=1000"));
 		} finally {
 			down.dispose();
 		}
@@ -74,7 +60,7 @@ public class HCDownloaderTest {
 		};
 
 		// WHEN : Download form valid URL
-		File file = down.download(new URL("http://localhost:8080/"));
+		File file = down.download(new URL(serverUrl + "/"));
 		down.dispose();
 
 		// THEN : Fails

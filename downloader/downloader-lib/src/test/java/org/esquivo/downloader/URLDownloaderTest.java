@@ -26,27 +26,15 @@ import org.slf4j.LoggerFactory;
  * The Class URLDownloaderTest.
  */
 @RunWith(value = Parameterized.class)
-public class URLDownloaderTest {
+public class URLDownloaderTest extends ServerTestBase {
 	private static final Logger LOG = LoggerFactory.getLogger(URLDownloaderTest.class);
 	
 	private Downloader down;
-	private static TestServer server;
 		
 	public URLDownloaderTest(Downloader down) {
 		this.down = down;
 	}
 	
-	@BeforeClass
-	public static void startServer() throws Exception {
-		server = new TestServer(8080);
-		server.getServerJetty().start();
-	}
-	
-	@AfterClass
-	public static void stopServer() throws Exception {
-		server.getServerJetty().stop();
-	}
-
 	@Parameters
 	public static Collection<Object[]> data() {
 		int connectionTimeout = 1000;
@@ -97,7 +85,7 @@ public class URLDownloaderTest {
 		// GIVEN : A download class
 		
 		// WHEN : Download form valid URL
-		File file = down.download(new URL("http://localhost:8080/?size=128"));
+		File file = down.download(new URL(serverUrl + "/?size=128"));
 		
 		// THEN : The file is stored
 		assertTrue(file.exists());
@@ -109,7 +97,7 @@ public class URLDownloaderTest {
 		// GIVEN : A download class
 		
 		// WHEN : Download form valid URL
-		File file = down.download(new URL("http://localhost:8080/?nullResponse=true"));
+		File file = down.download(new URL(serverUrl + "/?nullResponse=true"));
 		
 		// THEN : The file is stored
 		assertNull(file);
@@ -126,7 +114,7 @@ public class URLDownloaderTest {
 		DownloaderCallback callback = new DownloadCallbackTest();
 
 		// WHEN : Download form valid URL
-		File file = down.download(new URL("http://localhost:8080/?size=128"), callback);
+		File file = down.download(new URL(serverUrl + "/?size=128"), callback);
 		
 		// THEN : The file is stored
 		assertTrue(file.exists());
@@ -144,7 +132,7 @@ public class URLDownloaderTest {
 		DownloaderCallback callback = new DownloadCallbackTest();
 
 		// WHEN : Download form valid URL
-		File file = down.download(new URL("http://localhost:8080/?size=262144&reportSize=false"), callback);
+		File file = down.download(new URL(serverUrl + "/?size=262144&reportSize=false"), callback);
 		
 		// THEN : The file is stored
 		assertTrue(file.exists());
