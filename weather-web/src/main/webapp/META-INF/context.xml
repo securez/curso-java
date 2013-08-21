@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Context  path="/weather">
-
+<Context path="/weather">
+    <Resource name="jndi/Default" 
+        auth="Container" type="javax.mail.Session" 
+        mail.debug="true" 
+        mail.transport.protocol="smtp" 
+        mail.smtp.host="localhost" />
 </Context>

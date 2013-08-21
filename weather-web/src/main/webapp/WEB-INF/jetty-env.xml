@@ -9,7 +9,24 @@
             <New class="javax.naming.Reference">
                 <Arg>javax.enterprise.inject.spi.BeanManager</Arg>
                 <Arg>org.jboss.weld.resources.ManagerObjectFactory</Arg>
-                <Arg/>
+                <Arg />
+            </New>
+        </Arg>
+    </New>
+
+    <New id="mail" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>
+            <Ref id="webAppCtx" />
+        </Arg>
+        <Arg>mail/Default</Arg>
+        <Arg>
+            <New class="org.eclipse.jetty.jndi.factories.MailSessionReference">
+                <Set name="properties">
+                    <New class="java.util.Properties">
+                        <Put name="mail.smtp.host">localhost</Put>
+                        <Put name="mail.debug">true</Put>
+                    </New>
+                </Set>
             </New>
         </Arg>
     </New>
