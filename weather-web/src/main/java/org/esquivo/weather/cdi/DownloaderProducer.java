@@ -3,6 +3,7 @@ package org.esquivo.weather.cdi;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
 import javax.inject.Inject;
@@ -26,6 +27,7 @@ public class DownloaderProducer {
     private Integer readTimeout;
 
     @Produces
+    @ApplicationScoped
     public Downloader createDownloader() {
         final Map<String,Object> params = new HashMap<String,Object>();
         
