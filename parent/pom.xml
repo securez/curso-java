@@ -39,6 +39,7 @@
         <htmlcleaner.version>2.4</htmlcleaner.version>
         <jaxws-rt.version>2.2.7</jaxws-rt.version>
         <httpclient.version>4.2.2</httpclient.version>
+        <jackson.version>2.2.2</jackson.version>
 
         <!-- Maven plugin versions -->
         <maven.compiler.plugin.version>2.3.2</maven.compiler.plugin.version>
