@@ -6,6 +6,19 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
+    <distributionManagement>
+        <site>
+            <id>local-test</id>
+            <url>http://localhost</url>
+        </site>
+    </distributionManagement>
+    
+    <scm>
+        <connection>scm:git:git@github.com:securez/curso-java.git</connection>
+        <url>scm:ssh:git@securez/curso-java.git</url>
+        <developerConnection>scm:ssh:git@securez/curso-java.git</developerConnection>
+    </scm>
+
     <modules>
         <module>project-rules</module>
         <module>parent</module>
@@ -20,5 +33,44 @@
         <module>weather-parser-windguru</module>
         <module>weather-web</module>
     </modules>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-site-plugin</artifactId>
+                <configuration>
+                    <skipDeploy>true</skipDeploy>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.kohsuke</groupId>
+                        <artifactId>doxia-module-markdown</artifactId>
+                        <version>1.0</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.5</version>
+                <configuration>
+                    <message>Building site for ${project.version}</message>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>site-deploy</phase>
+                        <configuration>
+                            <path>${project.version}</path>
+                            <merge>true</merge>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
